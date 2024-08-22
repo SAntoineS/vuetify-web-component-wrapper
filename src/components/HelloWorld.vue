@@ -34,6 +34,10 @@
 
             <template #title>
               <h2 class="text-h5 font-weight-bold">Get started</h2>
+
+
+             
+            
             </template>
 
             <template #subtitle>
@@ -51,7 +55,42 @@
             />
           </v-card>
         </v-col>
+        <v-col>
+         <!-- ICON BUTTON HERE, DON'T WORK -->
+              <v-btn icon="mdi-plus"></v-btn>
 
+              <!-- DIALOG -->
+            <v-dialog max-width="500">
+  <template v-slot:activator="{ props: activatorProps }">
+    <v-btn
+      v-bind="activatorProps"
+      color="surface-variant"
+      text="Open Dialog"
+      variant="flat"
+    ></v-btn>
+  </template>
+
+  <template v-slot:default="{ isActive }">
+    <v-card title="Dialog">
+      <v-card-text>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <v-btn icon="mdi-plus" size="small" color="blue"></v-btn>
+
+      </v-card-text>
+
+      <v-card-actions>
+        <v-spacer></v-spacer>
+
+        <v-btn
+          text="Close Dialog"
+          @click="isActive.value = false"
+        ></v-btn>
+      </v-card-actions>
+    </v-card>
+  </template>
+</v-dialog>
+
+        </v-col>
         <v-col cols="6">
           <v-card
             append-icon="mdi-open-in-new"
